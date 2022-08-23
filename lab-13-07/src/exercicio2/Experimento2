@@ -1,0 +1,45 @@
+Experimento 2 - SCD
+
+Entrada:
+
+Novamente, são iniciadas as 4 Threads:
+
+Thread 1 -> usSem01.start( );
+Thread 2 -> usSem02.start( );
+Thread 3 -> usSem03.start( );
+Thread 4 -> usSem04.start( );
+
+Saída:
+
+A saída é exibida conforme a quantidade de loops declarados no For da classe em que a Thread é criada, corrigindo
+o problema do experimento anterior.
+
+
+Usuario 02
+Usuario 02
+Usuario 02
+Usuario 02
+Usuario 02
+Usuario 01
+Usuario 01
+Usuario 01
+Usuario 01
+Usuario 01
+Usuario 03
+Usuario 03
+Usuario 03
+Usuario 03
+Usuario 03
+Usuario 04
+Usuario 04
+Usuario 04
+Usuario 04
+Usuario 04
+
+
+Explicação:
+
+Os acessos à área crítica estão sendo controlados pela classe ControleAcesso por meio do algoritmo release e request,
+que basicamente coloca a execução das próximas Threads em espera, até que a Thread em execução seja finalizada,
+objetivando desta maneira, o tratamento de uma eventual inconsistência de dados e conflito de instruções dentro do
+programa. Corrigindo portanto, o problema demonstrado no Experimento 1.

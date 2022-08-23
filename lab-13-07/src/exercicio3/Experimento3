@@ -1,0 +1,30 @@
+Experimento 3 - SCD
+
+Entrada:
+
+São iniciadas as 2 threads do tipo Consumer e Producer respectivamente, e ambas utilizam recursos de um objeto do tipo
+UnsynchronizedBuffer, tanto para escrever dados, quando para consumir dados
+
+Saída:
+
+A saída são prints no console, com base em execuções das threads
+
+Consumer reads -1
+Consumer reads -1
+Producer writes 1
+Consumer reads 1
+Consumer reads 1
+Consumer read values totaling: 0.
+Terminating Consumer.
+Producer writes 2
+Producer writes 3
+Producer writes 4
+Producer done producing.
+Terminating Producer.
+
+
+Explicação:
+
+Um dos problemas é que o consumidor continua tentando consumir o buffer mesmo se ele estiver vazio (valor = -1), portanto,
+produtor continua inserindo dados no buffer, porém, o consumidor já parou de consumir, enquanto o produtor continua
+enviando.

@@ -1,0 +1,42 @@
+Experimento 1 - SCD
+
+Entrada:
+
+De início, são instanciadas quatro 4 threads que devem executar, sendo que cada thread deve printar na tela exatamente 5 vezes
+o seguinte:
+
+Thread 1 -> "Usuário 01"
+Thread 2 -> "Usuário 02"
+Thread 3 -> "Usuário 03"
+Thread 3 -> "Usuário 03"
+
+Saída:
+
+A saída é justamente uma sequência das strings mencionadas acima impressas no console, o ponto é que algumas threads estão imprimindo
+o texto que não é delas, exemplo de saída registrado:
+
+Usuario 02
+Usuario 01
+Usuario 04
+Usuario 04
+Usuario 03
+Usuario 01
+Usuario 04
+Usuario 03
+Usuario 02
+Usuario 01
+Usuario 03
+Usuario 04
+Usuario 02
+Usuario 01
+Usuario 03
+Usuario 04
+Usuario 02
+Usuario 02
+Usuario 02
+Usuario 02
+
+Explicação:
+O grande problema aqui, podemos ver que o "Usuário 02" foi imprimido mais de 5 vezes, por exemplo. Isso se dá por conta
+de que uma thread está tendo o "texto" sobrescrito por outra thread e consequentemente printando um valor não condizente
+com o setado anteriormente pelo seu próprio método setTexto().

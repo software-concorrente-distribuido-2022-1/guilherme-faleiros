@@ -33,6 +33,5 @@ public class Deposito {
         new Thread(new Consumidor(dep, 1)).start();
         new Thread(new Consumidor(dep, 1)).start();
 
-
     }
 }

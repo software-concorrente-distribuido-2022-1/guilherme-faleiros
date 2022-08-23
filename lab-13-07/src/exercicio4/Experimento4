@@ -1,0 +1,36 @@
+Experimento 4 - SCD
+
+Entrada:
+
+São iniciadas as 2 threads do tipo Consumer e Producer respectivamente, e ambas utilizam recursos de um objeto do tipo
+SynchronizedBuffer, tanto para escrever dados, quando para consumir dados.
+
+Saída:
+
+A saída são prints no console, com base em execuções das threads
+
+Initial State
+Consumer tries to read.
+Buffer empty. Consumer waits.
+Producer writes 1
+Consumer reads 1
+Consumer tries to read.
+Buffer empty. Consumer waits.
+Producer writes 2
+Consumer reads 2
+Producer writes 3
+Consumer reads 3
+Consumer tries to read.
+Buffer empty. Consumer waits.
+Producer writes 4
+Consumer reads 4
+Producer done producing.
+Terminating Producer.
+Consumer read values totaling: 10.
+Terminating Consumer.
+
+Explicação:
+
+Diferentemente do exercicio4, agora os outputs estão sincronizados, de maneira que sempre que um produtor escreva algo no
+buffer, o consumidor logo consome este dado e esvazia o buffer. O que faz este comportamento é o fato do consumidor ficar
+aguardando o produtor publicar algo no buffer.

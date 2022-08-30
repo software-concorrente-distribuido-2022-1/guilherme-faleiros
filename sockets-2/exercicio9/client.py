@@ -1,5 +1,4 @@
 from http import client
-import json
 import socket
 
 class BaseClient:
